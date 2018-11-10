@@ -1,0 +1,613 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Hind:400,600" rel="stylesheet">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+
+
+/*------------------------------------*\
+    BASIC
+\*------------------------------------*/
+
+body {
+font-family: 'Hind', sans-serif;
+}
+
+h1, h2, h3, h4, h5 ,h6 {
+  line-height: 1.15;
+}
+
+.underline:after {
+  content:'';
+  display:block;
+  height: 2px;
+  width:100%;
+  margin:10px auto;
+  background:#222;
+}
+
+p {
+  margin: 0;
+}
+
+div {
+  display: block;
+}
+
+/*------------------------------------*\
+    FOUNDATION
+\*------------------------------------*/
+
+.row {
+    max-width:1350px;
+    width:96%;
+    margin:0 auto;
+}
+
+/*------------------------------------*\
+    SECTION SPACING
+\*------------------------------------*/
+
+.pad {
+    padding: 60px 0;
+}
+
+.full-pad-med {
+    padding:40px;
+}
+
+.side-pad-med {
+    padding: 0 40px;
+}
+
+
+.pad-bottom {
+    padding-bottom: 60px;
+}
+
+.mb-35 {
+    margin-bottom: 35px;
+}
+.mb-6 {
+    margin-bottom: 70px;
+}
+
+/*------------------------------------*\
+    VERTICAL ALIGN SETTINGS
+\*------------------------------------*/
+
+.in-block {
+  display: inline-block;
+}
+
+.inline-wedge:before {
+  content: '';
+  display:inline-block;
+  height:100%;
+  vertical-align: middle;
+}
+
+.just-inline:after {
+  content: '';
+  display: inline-block;
+  width:100%;
+}
+
+
+/*------------------------------------*\
+   GENERAL HELPER CLASSES
+\*------------------------------------*/
+
+
+.hide {display:none !important}
+
+.show {display: block;}
+
+.opaque {
+  opacity:1;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.not-opaque {
+  opacity:0;
+}
+
+.no-style {
+    list-style:none;
+    margin: 0;
+    padding:0;
+}
+
+.txt-ctr {
+    text-align: center;
+}
+
+.spread {
+    width:100%;
+    height:100%;
+}
+
+.half-spread {
+    width: 100%;
+    height: 50%;
+}
+
+.sml-full {
+    width:100%;
+}
+
+.full-height-vh {
+    height:100vh;
+} 
+
+ .full-height {
+    height: 100%;
+}
+
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+
+.fill {
+    position: relative;
+  height: 45px;
+  outline: 0;
+  overflow:hidden;
+  background: inherit;
+  z-index: 1;
+-webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fill.flip {
+    -webkit-perspective: 100px;
+            perspective: 100px;
+    -webkit-perspective-origin: top;
+            perspective-origin: top;
+}
+
+.fill:hover {
+  color: #fff;
+  border-color: transparent;
+}
+
+.fill:before {
+  content: "";
+  position: absolute;
+  background: #1d62ae;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  opacity:0;
+-webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fill.flip:before {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+        -webkit-box-shadow: 0px 10px 0px #407ec1;
+                box-shadow: 0px 10px 0px #407ec1;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.fill:hover:before {
+  bottom: 0;
+  opacity:1;
+}
+
+.fill.flip:hover:before {
+  bottom: 0;
+  opacity:1;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+
+/*------------------------------------*\
+   BACKGROUND CLASSES
+\*------------------------------------*/
+
+.cover {
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+} 
+
+.contain {
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+/*------------------------------------*\
+   FLEX CLASSES
+\*------------------------------------*/
+
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.row-r {
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: reverse;
+          flex-direction: row-reverse;
+}
+
+.col {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+}
+
+.col-r {
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: reverse;
+          flex-direction: column-reverse;
+}
+
+.wrap {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+.wrap-r {
+  -webkit-flex-wrap:wrap-reverse;
+      -ms-flex-wrap:wrap-reverse;
+          flex-wrap:wrap-reverse;
+}
+
+.center-y {
+    -webkit-justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+            align-items: center;
+}
+
+.stretch {
+    -webkit-box-align:stretch;
+    -webkit-align-items:stretch;
+        -ms-flex-align:stretch;
+            align-items:stretch;
+}
+
+.center-x {
+    -webkit-justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+            justify-content: center;
+}
+
+
+.spaced-b {
+  -webkit-justify-content: space-between;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.spaced-a {
+  -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+      justify-content: space-around;
+   
+}
+
+
+/*------------------------------------*\
+    LAYOUT
+\*------------------------------------*/
+
+.sml-full {
+  width:100%;
+}
+
+.lrg-full {
+    width:100%;
+}
+
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.regirreg {
+    display: none;
+}
+h2.name {
+    margin: 0px;
+    border-top: 1px solid #e6e6e6;
+    padding: 10px 0 2px;
+    font-size: 1.25rem;
+}
+ul.list {
+    margin-top: 10px;
+}
+div#verb-list {
+    padding: 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <h2 class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</h2>
+  <![endif]-->
+
+
+  <div id="verb-list">
+    <input type="text" class="fuzzy-search options" placeholder="Type To Search"/>
+      <select id="regirreg" class="options">
+
+          <option value="" selected="selected">Reg/Irreg</option>
+          <option value="regular" >regular</option>
+          <option value="irregular" >irregular</option>
+
+      </select> 
+    <ul class="list">
+      <li>
+        <h2 class="name">Essere</h2>
+        <div class="regirreg">irregular</div>
+        <div class="flex conjugations spaced-b">
+          <div class="flex col subject">
+            <div class="">sub/tense</div>
+            <div class="io">io</div>
+            <div class="tu">tu</div>
+            <div class="lui lei Lei">Lui/lei</div>
+            <div class="noi">noi</div>
+            <div class="voi">voi</div>
+            <div class="loro">loro</div>
+          </div>
+          <div class="flex col">
+            <div class="tense">presente</div>
+            <div class="io conjugation">sono</div>
+            <div class="tu conjugation">sei</div>
+            <div class="lui lei Lei conjugation">e'</div>
+            <div class="noi conjugation">siamo</div>
+            <div class="voi conjugation">siete</div>
+            <div class="loro conjugation">sono</div>
+          </div>
+
+          <div class="flex col">
+            <div class="tense">presente</div>
+            <div class="io conjugation">sono</div>
+            <div class="tu conjugation">sei</div>
+            <div class="lui lei Lei conjugation">e'</div>
+            <div class="noi conjugation">siamo</div>
+            <div class="voi conjugation">siete</div>
+            <div class="loro conjugation">sono</div>
+          </div>
+<!--           <div class="flex col">
+            <div class="tense">futuro</div>
+          </div>
+          <div class="flex col">
+            <div class="tense">imperfetto</div>
+          </div>
+          <div class="flex col">
+            <div class="tense">condizionale</div>
+          </div>
+          <div class="flex col">
+            <div class="tense">imperativo</div>
+          </div> -->
+
+        </div>
+      </li>
+      <li><h2 class="name">abitare</h2>
+
+        <div class="regirreg">irregular</div></li>
+      <li><h2 class="name">Abitare - to inhabit</h2></li>
+      <li><h2 class="name">Accendere - to turn on</h2></li>
+      <li><h2 class="name">Addormentarsi - to fall asleep</h2></li>
+      <li><h2 class="name">Aiutare - to help</h2></li>
+      <li><h2 class="name">Amare - to love</h2></li>
+      <li><h2 class="name">Andare - to go</h2></li>
+      <li><h2 class="name">Annoiarsi - to be bored</h2></li>
+      <li><h2 class="name">Aprire - to open</h2></li>
+      <li><h2 class="name">Arrivare - to arrive</h2></li>
+      <li><h2 class="name">Ascoltare - to listen</h2></li>
+      <li><h2 class="name">Aspettare - to wait</h2></li>
+      <li><h2 class="name">Avere - to have</h2></li>
+      <li><h2 class="name">Baciare - to kiss</h2></li>
+      <li><h2 class="name">Ballare - to dance</h2></li>
+      <li><h2 class="name">Bere - to drink</h2></li>
+      <li><h2 class="name">Cambiare - to change</h2></li>
+      <li><h2 class="name">Camminare - to walk</h2></li>
+      <li><h2 class="name">Cantare - to sing</h2></li>
+      <li><h2 class="name">Capire - to understand</h2></li>
+      <li><h2 class="name">Cenare - to eat dinner</h2></li>
+      <li><h2 class="name">Cercare - to search</h2></li>
+      <li><h2 class="name">Chiamare - to call</h2></li>
+      <li><h2 class="name">Chiedere - to ask</h2></li>
+      <li><h2 class="name">Comprare - to buy</h2></li>
+      <li><h2 class="name">Conoscere - to know</h2></li>
+      <li><h2 class="name">continuare - to continue</h2></li>
+      <li><h2 class="name">correre - to run</h2></li>
+      <li><h2 class="name">costare - to cost</h2></li>
+      <li><h2 class="name">credere - to believe</h2></li>
+      <li><h2 class="name">cucinare - to cook</h2></li>
+      <li><h2 class="name">cuocere - to cook</h2></li>
+      <li><h2 class="name">dare - to give</h2></li>
+      <li><h2 class="name">dimenticare - to forget</h2></li>
+      <li><h2 class="name">dire - to tell</h2></li>
+      <li><h2 class="name">diventare - to become</h2></li>
+      <li><h2 class="name">divoziare - to divorce</h2></li>
+      <li><h2 class="name">domandare - to ask</h2></li>
+      <li><h2 class="name">dormire - to sleep</h2></li>
+      <li><h2 class="name">dovere - to must do </h2></li>
+      <li><h2 class="name">entrare - to enter</h2></li>
+      <li><h2 class="name">esistere - to exist</h2></li>
+      <li><h2 class="name">essere - to be</h2></li>
+      <li><h2 class="name">fare - to do</h2></li>
+      <li><h2 class="name">finire - to finish</h2></li>
+      <li><h2 class="name">gicare - to play</h2></li>
+      <li><h2 class="name">guardare - to watch</h2></li>
+      <li><h2 class="name">imparare - to learn</h2></li>
+      <li><h2 class="name">interessare - to have interest</h2></li>
+      <li><h2 class="name">lasciare - to leave</h2></li>
+      <li><h2 class="name">lavare - to wash</h2></li>
+      <li><h2 class="name">lavorare - to work</h2></li>
+      <li><h2 class="name">leggere - to read</h2></li>
+      <li><h2 class="name">mandare - to send</h2></li>
+      <li><h2 class="name">mangiare - to eat</h2></li>
+      <li><h2 class="name">mettere - to put</h2></li>
+      <li><h2 class="name">morire - to die</h2></li>
+      <li><h2 class="name">nascere - to be born</h2></li>
+      <li><h2 class="name">nevicare - to snow</h2></li>
+      <li><h2 class="name">nuotare to swim</h2></li>
+      <li><h2 class="name">organizzare - to organize</h2></li>
+      <li><h2 class="name">pagare - to pay</h2></li>
+      <li><h2 class="name">parlare - to talk</h2></li>
+      <li><h2 class="name">partire - to part</h2></li>
+      <li><h2 class="name">pensare - to think</h2></li>
+      <li><h2 class="name">perdere - to lose</h2></li>
+      <li><h2 class="name">piacere - to like</h2></li>
+      <li><h2 class="name">piovere - to rain</h2></li>
+      <li><h2 class="name">portare - to bring</h2></li>
+      <li><h2 class="name">potere - power / can do</h2></li>
+      <li><h2 class="name">pranzare - to eat lunch</h2></li>
+      <li><h2 class="name">preferire - to prefer</h2></li>
+      <li><h2 class="name">prendere - to take</h2></li>
+      <li><h2 class="name">provare - to try</h2></li>
+      <li><h2 class="name">regalare - to gift</h2></li>
+      <li><h2 class="name">ricordare - to remember</h2></li>
+      <li><h2 class="name">ridere - to smile</h2></li>
+      <li><h2 class="name">rimanere - to remain</h2></li>
+      <li><h2 class="name">ripetere - to repeat</h2></li>
+      <li><h2 class="name">rispondere - to respond</h2></li>
+      <li><h2 class="name">ritornare - to return</h2></li>
+      <li><h2 class="name">salire - to go up</h2></li>
+      <li><h2 class="name">salutare - to greet</h2></li>
+      <li><h2 class="name">sapere - to know</h2></li>
+      <li><h2 class="name">scendere - to go down</h2></li>
+      <li><h2 class="name">scrivere - to write</h2></li>
+      <li><h2 class="name">scusare - to excuse</h2></li>
+      <li><h2 class="name">sentire - to hear</h2></li>
+      <li><h2 class="name">spegnere - to turn off</h2></li>
+      <li><h2 class="name">sperare - to seperate</h2></li>
+      <li><h2 class="name">sposare - to marry</h2></li>
+      <li><h2 class="name">stare - to stay</h2></li>
+      <li><h2 class="name">studiare - to study</h2></li>
+      <li><h2 class="name">suonare - to play / to ring / to sound</h2></li>
+      <li><h2 class="name">svegliarsi - to walk up</h2></li>
+      <li><h2 class="name">telefonare - to call</h2></li>
+      <li><h2 class="name">tornare - to return</h2></li>
+      <li><h2 class="name">trovare - to find</h2></li>
+      <li><h2 class="name">usare - to use</h2></li>
+      <li><h2 class="name">uscire - to exit</h2></li>
+      <li><h2 class="name">vedere - to see</h2></li>
+      <li><h2 class="name">vendere - to sell</h2></li>
+      <li><h2 class="name">venire - to come</h2></li>
+      <li><h2 class="name">vestirsi - to dress</h2></li>
+      <li><h2 class="name">viaggiare - to travel</h2></li>
+      <li><h2 class="name">vietare - to forbid</h2></li>
+      <li><h2 class="name">visitare - to visit</h2></li>
+      <li><h2 class="name">vivere - to live</h2></li>
+      <li><h2 class="name">volare - to fly</h2></li>
+      <li><h2 class="name">volere - to want</h2></li>
+    </ul>
+  </div>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+  <script src="js/plugins.js"></script>
+<!--   <script src="js/main.js"></script> -->
+
+  <script>
+
+    var options = {
+        valueNames: ['name', 'conjugation', 'reg', 'tense', 'regirreg']
+    };
+
+    var verblist = new List('verb-list', options);
+
+
+
+    function updateList(){
+      var verbform_value = $('#regirreg').val();
+      
+      //console.log(values_city);
+      verblist.filter(function (item) {
+        var verbform = false;
+        
+        //console.log(item);
+        
+        if(verbform_value == "")
+        { 
+          verbform = true;
+        } else {
+          verbform = item.values().regirreg == verbform_value;
+          
+        }
+        
+        return verbform
+      });
+      verblist.update();
+      console.log('Filtered: ' + verbform_value);
+    }
+ 
+    $('#regirreg').change(updateList);
+    $('#regirreg').trigger('change');
+    
+    verblist.on('updated', function (list) {
+      if (list.matchingItems.length > 0) {
+        $('.no-result').hide()
+      } else {
+        $('.no-result').show()
+      }
+    });
+
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+</body>
+
+</html>

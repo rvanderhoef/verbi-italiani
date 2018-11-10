@@ -1,0 +1,992 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Italian verbs - Verbi Italiani - Study Guide</title>
+  <meta name="description" content="A simple web application to review Italiani language verbs, conjugations and general vocabulary.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+  <script src="https://use.fontawesome.com/cee185d8cd.js"></script>
+
+<!--   <link rel="manifest" href="site.webmanifest"> -->
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  <style>
+
+
+/*------------------------------------*\
+    BASIC
+\*------------------------------------*/
+
+body {
+  font-family: 'Hind', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  background: #dcd2d6;
+    background: #ea005e;
+}
+header {
+  padding: 25px 15px 10px;
+}
+h1, h2, h3, h4, h5 ,h6 {
+  line-height: 1.15;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.underline:after {
+  content:'';
+  display:block;
+  height: 2px;
+  width:100%;
+  margin:10px auto;
+  background:#222;
+}
+
+p {
+  margin: 0;
+}
+
+div {
+  display: block;
+}
+
+/*------------------------------------*\
+    FOUNDATION
+\*------------------------------------*/
+
+.row {
+    max-width:1350px;
+    width:96%;
+    margin:0 auto;
+}
+
+/*------------------------------------*\
+    SECTION SPACING
+\*------------------------------------*/
+
+.pad {
+    padding: 60px 0;
+}
+
+.full-pad-med {
+    padding:40px;
+}
+
+.side-pad-med {
+    padding: 0 40px;
+}
+
+
+.pad-bottom {
+    padding-bottom: 60px;
+}
+
+.mb-35 {
+    margin-bottom: 35px;
+}
+.mb-6 {
+    margin-bottom: 70px;
+}
+
+/*------------------------------------*\
+    VERTICAL ALIGN SETTINGS
+\*------------------------------------*/
+
+.in-block {
+  display: inline-block;
+}
+
+.inline-wedge:before {
+  content: '';
+  display:inline-block;
+  height:100%;
+  vertical-align: middle;
+}
+
+.just-inline:after {
+  content: '';
+  display: inline-block;
+  width:100%;
+}
+
+
+/*------------------------------------*\
+   GENERAL HELPER CLASSES
+\*------------------------------------*/
+
+
+.hide {display:none !important}
+
+.show {display: block !important;}
+
+.opaque {
+  opacity:1;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.not-opaque {
+  opacity:0;
+}
+
+.no-style {
+    list-style:none;
+    margin: 0;
+    padding:0;
+}
+
+.txt-ctr {
+    text-align: center;
+}
+
+.spread {
+    width:100%;
+    height:100%;
+}
+
+.half-spread {
+    width: 100%;
+    height: 50%;
+}
+
+.sml-full {
+    width:100%;
+}
+
+.full-height-vh {
+    height:100vh;
+} 
+
+ .full-height {
+    height: 100%;
+}
+
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+
+.fill {
+    position: relative;
+  height: 45px;
+  outline: 0;
+  overflow:hidden;
+  background: inherit;
+  z-index: 1;
+-webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fill.flip {
+    -webkit-perspective: 100px;
+            perspective: 100px;
+    -webkit-perspective-origin: top;
+            perspective-origin: top;
+}
+
+.fill:hover {
+  color: #fff;
+  border-color: transparent;
+}
+
+.fill:before {
+  content: "";
+  position: absolute;
+  background: #1d62ae;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  opacity:0;
+-webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition:         all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fill.flip:before {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+        -webkit-box-shadow: 0px 10px 0px #407ec1;
+                box-shadow: 0px 10px 0px #407ec1;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.fill:hover:before {
+  bottom: 0;
+  opacity:1;
+}
+
+.fill.flip:hover:before {
+  bottom: 0;
+  opacity:1;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+
+/*------------------------------------*\
+   BACKGROUND CLASSES
+\*------------------------------------*/
+
+.cover {
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+} 
+
+.contain {
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+/*------------------------------------*\
+   FLEX CLASSES
+\*------------------------------------*/
+
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.row-r {
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: reverse;
+          flex-direction: row-reverse;
+}
+
+.col {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+}
+
+.col-r {
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: reverse;
+          flex-direction: column-reverse;
+}
+
+.wrap {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+.wrap-r {
+  -webkit-flex-wrap:wrap-reverse;
+      -ms-flex-wrap:wrap-reverse;
+          flex-wrap:wrap-reverse;
+}
+
+.center-y {
+    -webkit-justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+            align-items: center;
+}
+
+.stretch {
+    -webkit-box-align:stretch;
+    -webkit-align-items:stretch;
+        -ms-flex-align:stretch;
+            align-items:stretch;
+}
+
+.center-x {
+    -webkit-justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+            justify-content: center;
+}
+
+
+.spaced-b {
+  -webkit-justify-content: space-between;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.spaced-a {
+  -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+      justify-content: space-around;
+   
+}
+.fgrow {
+  flex-grow: 1;
+}
+
+/*------------------------------------*\
+    LAYOUT
+\*------------------------------------*/
+
+.sml-full {
+  width:100%;
+}
+
+.lrg-full {
+    width:100%;
+}
+
+
+
+/*------------------------------------*\
+    CUSTOM
+\*------------------------------------*/
+
+.test-overlay {
+    background: #4a9ed4;
+    background: #61eaac;
+    background:black;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: ease all 500ms;
+}
+.test-overlay.active {
+    display: flex;
+    opacity: 1;
+    z-index: 99;
+}
+.test-overlay .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size:20px;
+}
+.test-overlay .next { 
+position: absolute;
+bottom: 20px;
+right: 20px;
+    color: white;
+}
+.overlay-inner {
+  position: relative;
+}
+.overlay-inner li {
+  padding: 10px;
+}
+.overlay-inner h2.name {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    font-size: 6vw;
+    margin-bottom: 30px;
+}
+.test-overlay .definizione-quiz {
+  display: none;
+}
+.test-overlay.quiz .definizione, .test-overlay.quiz .ausiliare, .test-overlay.quiz .conjugations {
+  display: none;
+}
+.test-overlay.quiz .definizione-quiz {
+  display: block;
+}
+ul.overlay-inner, ul.overlay-inner:before {
+  transition:ease all 500ms;
+}
+ul.overlay-inner:before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #61eaac;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    color: #11482f;
+    font-weight: bold;
+    justify-content: center;
+    transition: ease all 500ms;
+}
+ul.overlay-inner.correct:before {
+    content: 'CORRECT!';
+    opacity: 1;
+    z-index: 9;
+}
+#counter {
+  position: absolute;
+  line-height: 1;
+  bottom: 20px;
+  left: 20px;
+}
+.question {
+  display: none;
+}
+.test-overlay.quiz .question {
+  display: block;
+}
+
+.question form input {
+    width: 100%;
+    margin: 0px;
+    color: black;
+    color: #61eaac;
+    padding: 0px;
+    font-size: 26px;
+    background: transparent;
+    box-shadow: 0px 0px 0px;
+    outline: none;
+    border: 0px;
+    padding: 0px 0px 5px;
+    border-bottom: 2px solid white;
+}
+input.def.wrong-answer, form.verbquiz.wrong-answer input {
+    border-bottom: 2px solid #ea005e;
+}
+input#subbtn {
+    background: white;
+    width: 9%;
+    border-radius: 10%;
+    text-indent: -99999px;
+    float: right;
+    position: relative;
+    border-bottom: 0px;
+    padding: 2px;
+    display: none;
+}
+input#subbtn:after {
+    content: '>';
+    display: block;
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    right: 0;
+}
+input:focus { 
+    box-shadow: 0px 0px 0px !important;
+    outline: 0px !important; 
+}
+.question form input:focus {
+    color: #61eaac;
+}
+button.next {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+header button, header select, header input {
+    outline: none;
+    border: 0px;
+    background: white;
+    height: 30px;
+    line-height: 30px;
+    box-shadow: none;
+    border-radius: 0px !important;
+    padding: 0px 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    color: #444444;
+}
+button.quiz {
+    background: black;
+    color: white;
+    font-weight: 800;
+}
+.forma {
+    display: none;
+}
+h2.name {
+    margin: 0px;
+    /* border-top: 1px solid #e6e6e6; */
+    padding: 5px 0 0px;
+    font-size: 30px;
+    font-weight: 700;
+}
+ul.list li {
+    padding: 10px 20px;
+    margin: 15px 15px 15px;
+    border-radius: 10px;
+    background: white;
+}
+.overlay-inner .conjugations span { 
+    position: absolute;
+    margin-top: -22px;
+}
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+
+
+@media screen and (max-width: 600) {
+  .overlay-inner h2.name {
+    font-size: 50px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+  <div id="verb-list">
+    <header class="flex"> 
+      <input type="text" class="search options" placeholder="Type To Search"/>
+      <button class="sort" data-sort="name">Sort by name</button>
+
+      <select id="forma" class="options">
+          <option value="" selected="selected">tutti forma</option>
+          <option value="" >regulare</option>
+          <option value="irregulare" >irregulare</option>
+          <option value="riflessivo" >riflessivo</option>
+      </select> 
+
+      <select id="ausiliare" class="options">
+          <option value="" selected="selected">tutti ausiliare</option>
+          <option value="essere" >essere</option>
+          <option value="avere" >avere</option>
+      </select> 
+
+      <div class="fgrow"></div>
+      <button class="rand">Get Random</button>
+      <button class="quiz">quiz</button>
+    </header>
+    <ul class="list">
+
+  <script>
+      // 1NF7RU5GKC4-MwVsAwccpy-bT0JEEV_6pbEyLxcH-1n0
+      const app = function () {
+          const myData = {};
+          const output = document.querySelector('.list');
+          function init() {
+              //console.log('Loaded');
+              loadJSON();
+          }
+          function loadOutput() {
+              for (let x = 0; x < myData.verbs.length; x++) {
+                  let verb = myData.verbs[x];
+                  output.innerHTML += 
+                  '<li><h2 class="name">' + verb.infinito +'</h2>' +
+                    '<div class="definizione">' + verb.definizione + '</div>' +
+                    '<div class="question"><form class="definition quiztest"><input class="def" type="text"><input type="submit" id="subbtn" value="→"></form><span class="validate"></span></div>' +
+                    '<div class="forma">' + verb.forma + '</div>'+
+                    '<div class="ausiliare">' + verb.ausiliare + '</div>'+
+                    '<div class="flex conjugations spaced-b">'+
+                      '<div id="present" class="flex col">'+
+                        '<div class="io conj" data-answer="'+ verb.io +'" data-subject="io"><span>'+ verb.io +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="tu conj" data-answer="'+ verb.tu +'" data-subject="tu"><span>'+ verb.tu +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="lui conj" data-answer="'+ verb.lui +'" data-subject="lui"><span>'+ verb.lui +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="noi conj" data-answer="'+ verb.noi +'" data-subject="noi"><span>'+ verb.noi +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="voi conj" data-answer="'+ verb.voi +'" data-subject="voi"><span>'+ verb.voi +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="loro conj" data-answer="'+ verb.loro +'" data-subject="loro"><span>'+ verb.loro +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                      '</div>'+
+                    '</div>'+
+                  '</li>';
+                  
+                  //console.log(myData.verbs[x]);
+              }
+              //console.log(myData);
+          }
+          function loadJSON() {
+              const id = '1NF7RU5GKC4-MwVsAwccpy-bT0JEEV_6pbEyLxcH-1n0';
+              let urls = [];
+              for (let x = 1; x < 4; x++) {
+                  urls.push('https://spreadsheets.google.com/feeds/list/' + id + '/' + x + '/public/values?alt=json');
+              }
+              Promise.all(urls.map(url => {
+                  return fetch(url).then(response => response.json()).then(data => {
+                      let tempArray = [];
+                      let sheetName = data.feed.title.$t;
+                      data.feed.entry.forEach(element => {
+                          let holder = {};
+                          for (let key in element) {
+                              if (key.substring(0, 3) == 'gsx') {
+                                  //console.log(key.split('$')[1]);
+                                  holder[key.split('$')[1]] = element[key].$t;
+                              }
+                          }
+                          tempArray.push(holder);
+                          //console.log(element);  
+                      })
+                      //console.log(tempArray);
+                      //console.log(data);
+                      return {
+                          key: sheetName
+                          , value: tempArray
+                      }
+                  })
+              })).then(data => {
+                  for (let i = 0; i < data.length; i++) {
+                      myData[data[i].key] = data[i].value;
+                  }
+                  loadOutput();
+              })
+              //console.log(urls);
+          }
+          return {
+              init: init
+          };
+      }();
+      document.addEventListener('DOMContentLoaded', app.init);
+
+
+  </script>
+
+
+</ul>
+</div>
+
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+
+  <script>
+
+
+$(document).ready(function(){
+   setTimeout(function(){
+
+      var options = {
+          valueNames: ['name', 'conjugation', 'forma', 'ausiliare', 'definizione' ],
+          // listObj.alphabet = 'GgAa',
+          fuzzySearch: {
+            location: 0,
+            distance: 20,
+            threshold: 0.2,
+            multiSearch: true
+          },
+      };
+
+      var verblist = new List('verb-list', options);
+
+      // verblist.sort('name', {
+      //   alphabet: "zahpoiuytnhe" 
+      // });
+
+
+      function updateListForma(){
+        var verbform_value = $('#forma').val();
+        
+        //console.log(verbform_value);
+        
+        verblist.filter(function (item) {
+          var verbform = false;
+          
+          //console.log(item);
+          
+          if(verbform_value == "")
+          { 
+            verbform = true;
+          } else {
+            verbform = item.values().forma == verbform_value;
+          }
+          return verbform
+        });
+        verblist.update();
+        //console.log('Filtered: ' + verbform_value);
+      }
+
+
+      function updateListAusiliare(){
+        var verbform_value = $('#ausiliare').val();
+        
+        //console.log(verbform_value);
+        
+        verblist.filter(function (item) {
+          var verbform = false;
+          
+          //console.log(item);
+          
+          if(verbform_value == "")
+          { 
+            verbform = true;
+          } else {
+            verbform = item.values().ausiliare == verbform_value;
+          }
+          return verbform
+        });
+        verblist.update();
+        //console.log('Filtered: ' + verbform_value);
+      }
+   
+
+      $('#forma').change(updateListForma);
+      $('#forma').trigger('change');
+
+      $('#ausiliare').change(updateListAusiliare);
+      $('#ausiliare').trigger('change');
+
+
+      verblist.on('updated', function (list) {
+        if (list.matchingItems.length > 0) {
+          $('.no-result').hide()
+        } else {
+          $('.no-result').show()
+        }
+      });    
+      
+      console.log('pageready');
+
+   },3000);
+});
+
+
+  </script>
+
+<script type="text/javascript">
+  
+
+
+$(document).ready(function(){
+
+    // var correct = 0;
+    // var total = 0;
+ 
+    function nextItem() {
+      var rand =  Math.ceil(Math.random() *( jQuery('.list li').length + 1));
+      var next = $('.list li').get(rand);
+      $( ".overlay-inner" ).html(next);
+    };
+
+    $('.rand').on("click", function(){
+        $( ".test-overlay" ).toggleClass( "active" );
+        nextItem();
+    });
+
+    $('.quiz').on("click", function(){
+        $( ".test-overlay" ).toggleClass( "active" );
+        $( ".test-overlay" ).toggleClass( "quiz" );
+        nextItem();
+        activateTest();
+    });
+
+    // function activateTest() {
+    //   var theDefinizione = $('.overlay-inner .definizione').html();
+    //   console.log(theDefinizione);   
+    // };
+
+
+
+    $( "form.test" ).submit(function( e ) {
+      if ( $( "input.testin" ).val() === "correct" ) {
+        $( "span.testin" ).text( "Validated..." ).show();
+        e.preventDefault();
+      } else {
+     
+      $( "span.testin" ).text( "Not valid!" ).show().fadeOut( 1000 );
+        e.preventDefault();
+        };
+    }); 
+
+      var q = 1,
+      qMax = 0;
+
+    function resetConjCount() {
+      var q = 1,
+      qMax = 0;
+      console.log('reset count');
+    };
+    resetConjCount();
+
+
+    function activateTest() {
+
+      // resetConjCount();
+
+      var theDefinizione = $('.overlay-inner .definizione').html();
+      console.log(theDefinizione); 
+
+      $('.overlay-inner .def').select();
+      $( '.overlay-inner .quiztest' ).submit(function( e ) {
+        
+        $('#total').html(function(i, val) { return +val+1 });
+
+        if ( $( '.overlay-inner .def' ).val() === theDefinizione ) {
+          //correct 
+          $( '.overlay-inner' ).addClass( 'correct' );
+            setTimeout(function(){
+              $('.overlay-inner').removeClass( 'correct' );
+              $('.definition.quiztest').addClass('hide');
+              $('#correct').html(function(i, val) { return +val+1 });
+              // start the next item
+
+              startPresetTenseQuiz();
+              //nextItem();
+              //activateTest();
+            },1000);
+
+          } else {
+          $( '.overlay-inner .def' ).addClass( 'wrong-answer' );
+        };
+        e.preventDefault();
+      });
+    };
+
+
+    // begin present tense quiz 
+
+    function startPresetTenseQuiz() {
+
+        $('.test-overlay.quiz .conjugations').addClass('show');
+        qMax = $('#aOver #present .conj').length;
+        console.log(q);
+        console.log(qMax);
+        $('#aOver #present .conj').hide();
+        $('#aOver #present .conj:nth-child(1)').show();
+
+        var answer = $('#aOver #present .conj:nth-child(' + q + ')').data("answer");
+        console.log(answer);
+
+        var subject = $('#aOver #present .conj:nth-child(' + q + ')').data("subject");
+        console.log(subject);
+
+        $('#aOver #present .conj span').html(subject);
+        $('#aOver #present .conj:nth-child(' + q + ') .verbquiz input').select();
+
+        $('#aOver #present .conj:nth-child(' + q + ') .verbquiz').submit(function( e ) {
+
+            $('#total').html(function(i, val) { return +val+1 });
+
+            if ($(this).find('input').val() === answer) {
+                $('#correct').html(function(i, val) { return +val+1 });
+                handleClick();
+            } else {
+                $(this).addClass( "wrong-answer" );
+            }
+            e.preventDefault();
+        });
+    };
+    function handleClick() {
+        if (q < qMax) {
+            $('#aOver #present .conj:nth-child(' + q + ')').hide();
+            $('#aOver #present .conj:nth-child(' + (q + 1) + ')').show();
+            
+            var answer = $('#aOver #present .conj:nth-child(' + (q + 1) +')').data("answer");
+            console.log(answer);
+
+            var subject = $('#aOver #present .conj:nth-child(' + (q + 1) +')').data("subject");
+            console.log(subject);
+
+            $('#aOver #present .conj span').html(subject);
+            $('#aOver #present .conj:nth-child(' + (q + 1) +') .verbquiz input').select();
+
+            $('#aOver #present .conj:nth-child(' + (q + 1) + ') .verbquiz').submit(function( e ) {
+
+                $('#total').html(function(i, val) { return +val+1 });
+
+                if ($(this).find('input').val() === answer) {              
+                    $('#correct').html(function(i, val) { return +val+1 });                  
+                    handleClick();
+                    return false
+                } else {
+                    $(this).addClass( "wrong-answer" );
+                }
+                e.preventDefault();
+            });
+
+            if (q == (qMax - 1)) {
+              console.log('finished');
+            }
+            q++;
+            console.log(q);
+            console.log(qMax);
+        } else {            
+          $( '.overlay-inner' ).addClass( 'correct' );
+              console.log('conj correct');
+              // var q = 1,
+              // qMax = 0;
+              // console.log(q);
+              // console.log(qMax);
+            setTimeout(function(){
+              $('.overlay-inner').removeClass( 'correct' );
+              $('.definition.quiztest').removeClass('hide');
+              // start the next item
+              nextItem();
+              activateTest();
+            },1000);
+               // Add code to submit your form
+        }
+    };
+
+
+
+
+
+
+    $('.close').on("click", function(){
+        $('.definition.quiztest').removeClass('hide');
+        $( ".test-overlay" ).removeClass( "active" );
+        setTimeout(function(){
+          $( ".test-overlay" ).removeClass( "quiz" );
+        },600);
+    });
+
+    $('.next').on("click", function(){
+      $('.definition.quiztest').removeClass('hide');
+      $( ".overlay-inner" ).removeClass( "correct" );        
+      nextItem();
+    });
+
+
+});
+
+</script>
+
+<div class="test-overlay flex full-height-vh center-y">
+  <div class="close">X</div>
+  <div id="counter">Correct: <span id="correct">0</span> / <span id="total">0</span></div>
+  <ul id="aOver" class="overlay-inner">
+  </ul>
+  <button class="next">Next</button>
+</div>
+
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<!--   <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+
+</body>
+
+</html>
