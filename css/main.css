@@ -111,6 +111,7 @@ body {
     margin: 0;
     background: #dcd2d6;
       background: #ea005e;
+      background: #e0e0e0;
   }
   header {
     padding: 25px 15px 10px;
@@ -583,7 +584,7 @@ body {
       padding: 0px;
   }
   header button, header select, header input {
-      outline: none;
+      /* outline: none;
       border: 0px;
       background: white;
       height: 30px;
@@ -593,7 +594,7 @@ body {
       padding: 0px 10px;
       margin-right: 5px;
       text-transform: uppercase;
-      color: #444444;
+      color: #444444; */
   }
   button.quiz {
       background: black;
@@ -640,13 +641,49 @@ body {
 
 
 
+    /*------------------------------------*\
+      toggler
+  \*------------------------------------*/
 
 
 
 
 
 
+  .navbar-toggle {
+    border: none;
+    background: transparent !important;
+  }
+    .navbar-toggle &:hover {
+      background: transparent !important;
+    }
+  
+    .navbar-toggle .icon-bar {
+      width: 22px;
+      transition: all 0.2s;
+    }
+    .navbar-toggle .top-bar {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%;
+    }
+    .navbar-toggle .middle-bar {
+      opacity: 0;
+    }
+    .navbar-toggle .bottom-bar {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%;
+    }
 
+
+     .navbar-toggle.collapsed.top-bar {
+        transform: rotate(0);
+      }
+       .navbar-toggle.collapsed.middle-bar {
+        opacity: 1;
+      }
+       .navbar-toggle.collapsed.bottom-bar {
+        transform: rotate(0);
+      }
 
 
 

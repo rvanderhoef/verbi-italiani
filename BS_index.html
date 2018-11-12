@@ -21,12 +21,168 @@
   
 </head>
   <body>
-
     
 
+      
+    <div id="verb-list container">
+    <header class="d-flex navbar navbar-default navbar-expand-md"> 
+        <a class="navbar-brand" href="#">
+            Verbi
+            <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+          </a>          
+          <button class="navbar-toggler bg-white-outline collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">icon</span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav form-row"> 
+        <div class="nav-item">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                </div>
+                <input type="text" class="form-control search options" placeholder="Type To Search"/>
+            </div>
+        </div>  
+        <div class="nav-item">
+            <button class="btn btn-white-outline sort" data-sort="name">Sort by name</button>
+        </div>
+        <div class="nav-item col-md-3">  
+            <select id="forma" class="form-control options">
+                <option value="" selected="selected">tutti forma</option>
+                <option value="" >regulare</option>
+                <option value="irregulare" >irregulare</option>
+                <option value="riflessivo" >riflessivo</option>
+            </select> 
+        </div>
+        <div  class="nav-item  col-md-3">  
+            <select id="ausiliare" class="form-control options">
+                <option value="" selected="selected">tutti ausiliare</option>
+                <option value="essere" >essere</option>
+                <option value="avere" >avere</option>
+            </select> 
+        </div>
+            <button class="rand btn btn-white-outline">Get Random</button>
+            <button class="quiz btn bg-dark">quiz</button>
+        </div>
+    </div>
+      </div>
+
+    </header>
+    <ul class="list">
+
+  <script>
+      // 1NF7RU5GKC4-MwVsAwccpy-bT0JEEV_6pbEyLxcH-1n0
+      const app = function () {
+          const myData = {};
+          const output = document.querySelector('.list');
+          function init() {
+              //console.log('Loaded');
+              loadJSON();
+          }
+          function loadOutput() {
+              for (let x = 0; x < myData.verbs.length; x++) {
+                  let verb = myData.verbs[x];
+                  output.innerHTML += 
+                  '<li><h2 class="name">' + verb.infinito +'</h2>' +
+                    '<div class="definizione">' + verb.definizione + '</div>' +
+                    '<div class="question"><form class="definition quiztest"><input class="def" type="text"><input type="submit" id="subbtn" value="→"></form><span class="validate"></span></div>' +
+                    // '<div class="forma">' + verb.forma + '</div>'+
+                    // '<div class="ausiliare">' + verb.ausiliare + '</div>'+
+                    '<div class="flex conjugations spaced-b">'+
+                    //start congications 
+                    //present
+                      '<div id="present" class="flex col">'+
+                        '<div class="io conj" data-answer="'+ verb.io +'" data-subject="io"><span>'+ verb.io +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="tu conj" data-answer="'+ verb.tu +'" data-subject="tu"><span>'+ verb.tu +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="lui conj" data-answer="'+ verb.lui +'" data-subject="lui"><span>'+ verb.lui +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="noi conj" data-answer="'+ verb.noi +'" data-subject="noi"><span>'+ verb.noi +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="voi conj" data-answer="'+ verb.voi +'" data-subject="voi"><span>'+ verb.voi +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="loro conj" data-answer="'+ verb.loro +'" data-subject="loro"><span>'+ verb.loro +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                      '</div>'+
+                      // past
+                      '<div id="pProssimo" class="flex col">'+
+                        '<div class="io conj" data-answer="'+ verb.ioprossimo +'" data-subject="io"><span>'+ verb.ioprossimo +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="tu conj" data-answer="'+ verb.tuprossimo +'" data-subject="tu"><span>'+ verb.tuprossimo +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="lui conj" data-answer="'+ verb.luirossimo +'" data-subject="lui"><span>'+ verb.luiprossimo +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="noi conj" data-answer="'+ verb.noiprossimo +'" data-subject="noi"><span>'+ verb.noiprossimo +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="voi conj" data-answer="'+ verb.voiprossimo +'" data-subject="voi"><span>'+ verb.voiprossimo +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                        '<div class="loro conj" data-answer="'+ verb.loroprossimo +'" data-subject="loro"><span>'+ verb.loroprossimo +'</span>'+
+                        '<div class="question"><form class="verbquiz"><input type="text"><input type="submit"id="subbtn"></form></div></div>' +
+                      '</div>'+
+                    '</div>'+
+                  '</li>';
+                  
+                  //console.log(myData.verbs[x]);
+              }
+              //console.log(myData);
+          }
+          function loadJSON() {
+              const id = '1NF7RU5GKC4-MwVsAwccpy-bT0JEEV_6pbEyLxcH-1n0';
+              let urls = [];
+              for (let x = 1; x < 4; x++) {
+                  urls.push('https://spreadsheets.google.com/feeds/list/' + id + '/' + x + '/public/values?alt=json');
+              }
+              Promise.all(urls.map(url => {
+                  return fetch(url).then(response => response.json()).then(data => {
+                      let tempArray = [];
+                      let sheetName = data.feed.title.$t;
+                      data.feed.entry.forEach(element => {
+                          let holder = {};
+                          for (let key in element) {
+                              if (key.substring(0, 3) == 'gsx') {
+                                  //console.log(key.split('$')[1]);
+                                  holder[key.split('$')[1]] = element[key].$t;
+                              }
+                          }
+                          tempArray.push(holder);
+                          //console.log(element);  
+                      })
+                      //console.log(tempArray);
+                      //console.log(data);
+                      return {
+                          key: sheetName
+                          , value: tempArray
+                      }
+                  })
+              })).then(data => {
+                  for (let i = 0; i < data.length; i++) {
+                      myData[data[i].key] = data[i].value;
+                  }
+                  loadOutput();
+              })
+              //console.log(urls);
+          }
+          return {
+              init: init
+          };
+      }();
+      document.addEventListener('DOMContentLoaded', app.init);
+
+
+  </script>
+
+
+</ul>
+</div>
 
 
 
+  <script type="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script type="text/javascript"  src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+  <script type="text/javascript"  src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/vquiz.js"></script>
 
 
 
@@ -34,10 +190,19 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-
+    <script type="text/javascript"  src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!--   <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+
+
+
 
 </body>
 </html>
